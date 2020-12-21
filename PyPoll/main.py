@@ -12,77 +12,61 @@ with open(csvpath) as csvfile:
     #Assign csvfile to iterable variable
     csvreader = csv.reader(csvfile, delimiter = ',')
 
-    #Read the header row first
+    #Read the header row first to move cursor to first data row
     csv_header = next(csvreader)
 
-    #Define candidate counting function
-    def CountCandidates(candidates, totVote):
+    #Build container for election dictionary    
+    election = {}
 
-        election = {}
+    #Define candidate counting function
+    def CountCandidates(candidates):
+        
         for candidate in candidates:
             if candidate in election:
                 election[candidate] += 1
             else:
                 election[candidate] = 1
+        return election
 
-        for key, value in election.items(): 
-            pctTot =round((value / totVote) *100, 2)
-            print(f'{key}: {value} {pctTot}%')
-
-        winner = max(election, key=election.get) 
-        print(f'\nWinner: {winner}')
-
-        #Write results to txt file
-        txtpath = os.path.join('analysis', 'analysis.txt')
-
-        with open(txtpath, 'w') as txtfile:
-
-            print('\n----------------', file=txtfile)
-            print('Election Results', file=txtfile)
-            print('----------------\n', file=txtfile)
-            print(f'Total Votes: {totVote}', file=txtfile)
-            for key, value in election.items(): 
-                print(f'{key}: {value} {pctTot}%', file=txtfile)
-
-            print(f'\nWinner: {winner}', file=txtfile)
-
-        txtfile.close()
-
-    #Build list container
+    #Build list container for candidates
     candidates = []
 
-    #Loop through data set
+    #Loop through csv and extract candidates into list
     for row in csvreader:
-
-        #Fill Candiate List
         candidates.append(row[2])
 
-    #Calculate Total # of Votes
+    #Calculate Total # of Votes in election
     totVote = len(candidates)
     print('\n---------------\nElection Results\n---------------\n')
     print(f'Total Votes: {totVote}')
 
-    #Call function to tally candidate totals and declare winner
-    CountCandidates(candidates, totVote)    
+    #Call function to tally candidate totals (frequency function)
+    CountCandidates(candidates)
+
+    #Loop though election dictionary to calculate vote spread
+    for key, value in election.items(): 
+            pctTot =round((value / totVote) *100, 2)
+            print(f'{key}: {value} {pctTot}%')
+
+    #Calculate & Print Winner of Election 
+    winner = max(election, key=election.get) 
+    print(f'\nWinner: {winner}')
+
+    #Write results to txt file using sys dependancy 
+    txtpath = os.path.join('analysis', 'analysis.txt')
+
+    with open(txtpath, 'w') as txtfile:
+
+        print('\n----------------', file=txtfile)
+        print('Election Results', file=txtfile)
+        print('----------------\n', file=txtfile)
+        print(f'Total Votes: {totVote}', file=txtfile)
+        for key, value in election.items():
+            pctTot =round((value / totVote) *100, 2) 
+            print(f'{key}: {value} {pctTot}%', file=txtfile)
+
+        print(f'\nWinner: {winner}', file=txtfile)
+
+    txtfile.close()
 
 csvfile.close()
-
-    
-
-
-
-
-
-
-    
-
-
-
-    
-
-
-
-
-
-
-
