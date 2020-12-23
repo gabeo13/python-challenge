@@ -1,3 +1,15 @@
+'''----------PyBank----------
+* This Python script is designed to analyze a finacial dataset comprised of Date and Profit/Loss columns
+* Input file is in CSV (comma seperated value format)
+* Output tasks include:
+    * Calcuate total number of months included in dataset
+    * Calculate total net amount of "Profit/Loss" over entire period
+    * Calculate M/M change in "Profit/Loss" and compute average M/M change
+    * Find greatest increase in proft (Date & Amount)
+    * Find greatest decrease in profit Date & Amount)
+* Print output to terminal and text file in "Analysis" folder
+'''
+
 #Import OS Module to enable cross platform functionality across operating systems
 import os 
 
