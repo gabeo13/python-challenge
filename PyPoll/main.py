@@ -58,11 +58,11 @@ with open(csvpath) as csvfile:
     #Loop though election dictionary to calculate vote spread
     for key, value in election.items(): 
             pctTot =round((value / totVote) *100, 2)
-            print(f'{key}: {value} {pctTot}%')
+            print(f'{key}: {pctTot}%  ({value})')
 
     #Calculate & Print Winner of Election 
     winner = max(election, key=election.get) 
-    print(f'\nWinner: {winner}')
+    print(f'---------------\nWinner: {winner}\n---------------')
 
     #Write results to txt file using sys dependancy 
     txtpath = os.path.join('analysis', 'analysis.txt')
@@ -75,9 +75,9 @@ with open(csvpath) as csvfile:
         print(f'Total Votes: {totVote}', file=txtfile)
         for key, value in election.items():
             pctTot =round((value / totVote) *100, 2) 
-            print(f'{key}: {value} {pctTot}%', file=txtfile)
+            print(f'{key}: {pctTot}%  ({value})', file=txtfile)
 
-        print(f'\nWinner: {winner}', file=txtfile)
+        print(f'---------------\nWinner: {winner}\n---------------', file=txtfile)
 
     txtfile.close()
 
