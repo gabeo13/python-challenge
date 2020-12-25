@@ -6,7 +6,7 @@
     * Calculate total net amount of "Profit/Loss" over entire period
     * Calculate M/M change in "Profit/Loss" and compute average M/M change
     * Find greatest increase in proft (Date & Amount)
-    * Find greatest decrease in profit Date & Amount)
+    * Find greatest decrease in profit (Date & Amount)
 * Print output to terminal and text file in "Analysis" folder
 '''
 

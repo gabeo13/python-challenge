@@ -3,8 +3,8 @@
 * Input file is in CSV (comma seperated value format)
 * Output tasks include:
     * Calcuate total number of votes cast
-    * Calculate a complete list of candidate that received votes
-    * Calculate Percentage of votes each candiate won
+    * Calculate a complete list of candidates that received votes
+    * Calculate percentage of the total vote each candiate won
     * Calculate the total number of votes each candidate won
     * Find the winner of the election based on popular vote
 * Print output to terminal and text file in "Analysis" folder
