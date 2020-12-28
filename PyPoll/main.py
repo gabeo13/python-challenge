@@ -1,7 +1,7 @@
 '''----------PyPoll----------
 * This Python script is designed to analyze an election dataset with VoterID, County, and Candidate columns
 * Input file is in CSV (comma seperated value format)
-* Output tasks include:
+* Program tasks include:
     * Calcuate total number of votes cast
     * Calculate a complete list of candidates that received votes
     * Calculate percentage of the total vote each candiate won

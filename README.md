@@ -6,7 +6,7 @@ This two part project consists of analyzing two disparate datasets with basic py
 ![](Images/pyBankheader.jpg)
 ---
 ---
-Using a provided csv file with columns for Date & Profit/Loss as laid out below, analyze and record the following:
+Using a csv file with columns for Date & Profit/Loss as laid out below, analyze and record the following:
 ---
 _CSV Table Format_
 | Date | Profit/Losses |
@@ -30,7 +30,7 @@ _Results_
 ![](Images/pyPollheader.jpg)
 ---
 ---
-Using provided election dataset containing "Voter ID", "Candidate", and "County", analyze and record the following:
+Using an election dataset containing "Voter ID", "Candidate", and "County", analyze and record the following:
 ---
 _CSV Table Format_
 | Voter ID | County |Candidate|
